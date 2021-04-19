@@ -1,3 +1,7 @@
+<!--
+  Tappx Intream video example with AdPlayer.Pro
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,54 +10,60 @@
 
   <script async src="../../build/dev/prebid.js"></script>
 
-<!--AdPlayer.Pro code-->
+<!-- AdPlayer.Pro code -->
 <script src="https://static.adplayer.pro/player/demo.js"></script>
 
 </head>
 <body>
 
-  <div id='playerContainerADP'></div>
+<!-- Ad player Div. Configured on AdPlayerPro setup (AdPlayerPro('playerContainerADP').setup) -->
+<div id='playerContainerADP'></div>
+
 <script>
-	/* our app where we run player
-   our app variables */
+
+// PrebidJs Configuration. Our app where we run player our app variables
 		var pbjs;
 		pbjs = pbjs || {};
 		pbjs.que = pbjs.que || [];
 		var debug = false;
 		if (typeof window.console === 'undefined' || typeof window.console.log === 'undefined' || typeof window.console.dir === 'undefined') {
-		  debug = false;
+      debug = false;
 		}
+
+// Video div id
 		var videoId = 'video-ad-div';
 
-		/* Prebid video ad unit
-		   This is a working example but you must use your own settings/bidders for production
-		   More docs at https://prebid.org/prebid-video/video-overview.html */
-       var adUnits = [
-        {
-            code: videoId,
-            renderer: {
-                options: {
-                    text: "Tappx instream Video"
-                    }
-            },
-            mediaTypes: {
-                video: {
-                    context: "instream",
-                    mimes : [ "video/mp4" ],
-                    playerSize: [320, 250]
-                }
-            },
-            bids: [{
-                bidder: 'tappx',
-                params: {
-                    host: "testing.ssp.tappx.com/rtb/v2/",
-                    tappxkey: "YOUR_TAPPX_KEY",
-                    endpoint: "YOUR_ENDPOINT",
-                    bidfloor: 0.005,
-                    test: true
-                }
-            }]
-        }
+/**
+ * Tappx PrebidJs adunit functional for instream example
+ * - It is necessary to replace the endpoint and the tappxkey for yours
+ * - For test purposes, set the bids.params.test to true
+*/
+    var adUnits = [
+      {
+          code: videoId,
+          renderer: {
+              options: {
+                  text: "Tappx instream Video"
+                  }
+          },
+          mediaTypes: {
+              video: {
+                  context: "instream",
+                  mimes : [ "video/mp4" ],
+                  playerSize: [320, 250]
+              }
+          },
+          bids: [{
+              bidder: 'tappx',
+              params: {
+                  host: "testing.ssp.tappx.com/rtb/v2/",
+                  tappxkey: "TAPPX_KEY",
+                  endpoint: "TAPPX_ENDPOINT",
+                  bidfloor: 0.005,
+                  test: true
+              }
+          }]
+      }
     ];
 
 		pbjs.que.push(function () {
@@ -65,7 +75,6 @@
 		        window.console.dir(bids);
 		      }
 		      // we get the VAST XML from bids adResponse and pass it to our outstream player
-
           console.log(bids[videoId].bids[0]);
 
 		      if (bids && bids[videoId] && bids[videoId].bids && bids[videoId].bids[0]) {
@@ -76,16 +85,18 @@
 		            if (debug) {
 		              window.console.log(vastXml);
 		            }
-                        AdPlayerPro('playerContainerADP').setup({
-                            "file": "https://static.adplayer.pro/video/640.mp4",
-                            "width": 640,
-                            "height": 360,
-                            "autoStart": true,
-                            "muted": true,
-                            "advertising": {
-                                "tag": vastXml
-                            }
-                        });
+
+// AdPlayerPro configuration
+                  AdPlayerPro('playerContainerADP').setup({
+                      "file": "https://static.adplayer.pro/video/640.mp4", // static file
+                      "width": 640,
+                      "height": 360,
+                      "autoStart": true,
+                      "muted": false,
+                      "advertising": {
+                          "tag": vastXml
+                      }
+                  });
 		          }
 		        }
 		      }

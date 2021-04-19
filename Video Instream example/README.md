@@ -50,7 +50,9 @@ var adUnits = [
 
 # Files
 
-Player | File | Description
----  | --- | --- |
-Example with Adplayer.pro | tappx-video-appro-test.html | -
+Any of the files can be executed with the `pbjs_debug` parameter seted to true: `tappx-video-test.html?pbjs_debug=true`. This will enable debug mode of PrebidJs and you will be able to view more information on your browser console.
+
+Player | File | Url | Description
+---  | --- | --- | --- |
+Example with Adplayer.pro | tappx-video-appro-test.html | /integrationExamples/gpt/tappx-video-test.html?pbjs_debug=true | -
 
