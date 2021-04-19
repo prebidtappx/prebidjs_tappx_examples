@@ -6,16 +6,16 @@ You should copy these files in /integrationexamples/gpt/
 
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
-code | Yes | References your video id  | video-ad-div |
+code | Yes | References your video div id  | video-ad-div |
 mediaTypes.video.context |Yes | Video ad type specification | instream
-mediaTypes.video.mimes | Yes |  | Must be: [ "video/mp4" ]
-mediaTypes.video.playerSize | Yes | Is where you define the player size that will be passed | Should be one array ob sizes: [320, 250]
-bids.bidder |  |  |
-bids.params.host |  |  |
-bids.params.tappxkey |  |  |
-bids.params.endpoint |  |  |
-bids.params.bidfloor |  |  |
-bids.params.test |  |  |
+mediaTypes.video.mimes | Yes | Mimes suported | Must be: [ "video/mp4" ]
+mediaTypes.video.playerSize | Yes | Is where you define the player size that will be passed | Should be one array of sizes: [[320, 50],[320, 250]]
+bids.bidder | Yes | Bidder name | Must be: tappx
+bids.params.host | Yes | Tappx url | testing.ssp.tappx.com/rtb/v2/
+bids.params.tappxkey | Yes | Tappx Key | pub-1234-desktop-1234
+bids.params.endpoint | Yes | Tappx Endpoint  | ABCD1234
+bids.params.bidfloor | Yes | Desired bifloor | 0.01
+bids.params.test | No | Set it to true for testing purposes |
 
 ### Example
 ```
@@ -49,6 +49,8 @@ var adUnits = [
 ```
 
 # Files
-tappx-video-test.html
 
-Example with Adplayer.pro
+Player | File | Description
+---  | --- | --- |
+Example with Adplayer.pro | tappx-video-appro-test.html | -
+
