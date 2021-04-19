@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Prebid.js video adUnit example</title>
+
+  <script async src="../../build/dev/prebid.js"></script>
+
+<!--AdPlayer.Pro code-->
+<script src="https://static.adplayer.pro/player/demo.js"></script>
+
+</head>
+<body>
+
+  <div id='playerContainerADP'></div>
+<script>
+	/* our app where we run player
+   our app variables */
+		var pbjs;
+		pbjs = pbjs || {};
+		pbjs.que = pbjs.que || [];
+		var debug = false;
+		if (typeof window.console === 'undefined' || typeof window.console.log === 'undefined' || typeof window.console.dir === 'undefined') {
+		  debug = false;
+		}
+		var videoId = 'video-ad-div';
+
+		/* Prebid video ad unit
+		   This is a working example but you must use your own settings/bidders for production
+		   More docs at https://prebid.org/prebid-video/video-overview.html */
+       var adUnits = [
+        {
+            code: videoId,
+            renderer: {
+                options: {
+                    text: "Tappx instream Video"
+                    }
+            },
+            mediaTypes: {
+                video: {
+                    context: "instream",
+                    mimes : [ "video/mp4" ],
+                    playerSize: [320, 250]
+                }
+            },
+            bids: [{
+                bidder: 'tappx',
+                params: {
+                    host: "testing.ssp.tappx.com/rtb/v2/",
+                    tappxkey: "YOUR_TAPPX_KEY",
+                    endpoint: "YOUR_ENDPOINT",
+                    bidfloor: 0.005,
+                    test: true
+                }
+            }]
+        }
+    ];
+
+		pbjs.que.push(function () {
+		  pbjs.addAdUnits(adUnits);
+		  pbjs.requestBids({
+		    timeout: 1000,
+		    bidsBackHandler: function (bids) {
+		      if (debug) {
+		        window.console.dir(bids);
+		      }
+		      // we get the VAST XML from bids adResponse and pass it to our outstream player
+
+          console.log(bids[videoId].bids[0]);
+
+		      if (bids && bids[videoId] && bids[videoId].bids && bids[videoId].bids[0]) {
+		        var adResponse = bids[videoId].bids[0];
+		        if (true) {
+		          var vastXml = bids[videoId].bids[0].vastXml;
+		          if (vastXml !== '') {
+		            if (debug) {
+		              window.console.log(vastXml);
+		            }
+                        AdPlayerPro('playerContainerADP').setup({
+                            "file": "https://static.adplayer.pro/video/640.mp4",
+                            "width": 640,
+                            "height": 360,
+                            "autoStart": true,
+                            "muted": true,
+                            "advertising": {
+                                "tag": vastXml
+                            }
+                        });
+		          }
+		        }
+		      }
+		    }
+		  });
+		});
+</script>
+
+</body>
+</html>
