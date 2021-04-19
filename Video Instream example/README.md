@@ -37,7 +37,7 @@ var adUnits = [
         bids: [{
             bidder: 'tappx',
             params: {
-                host: "testing.ssp.tappx.com/rtb/v2/",
+                host: "HOST",
                 tappxkey: "YOUR_TAPPXKEY",
                 endpoint: "YOUR_ENDPOINT",
                 bidfloor: 0.005,
