@@ -18,9 +18,6 @@ gulp serve
 
 # Build Optimization
 gulp serve --modules=tappxBidAdapter
-
-# Fast build
-gulp serve-fast --modules=tappxBidAdapter
 ```
 
 This will create the `prebid.js` file under `./build/dev/`
