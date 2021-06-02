@@ -1,6 +1,4 @@
-# Video Instream Example
-
-You should copy these files in /integrationexamples/gpt/
+# VIDEO INSTREAM EXAMPLE
 
 ## Video Ad Unit description:
 
@@ -11,9 +9,9 @@ mediaTypes.video.context |Yes | Video ad type specification | instream
 mediaTypes.video.mimes | Yes | Mimes suported | Must be: [ "video/mp4" ]
 mediaTypes.video.playerSize | Yes | Is where you define the player size that will be passed | Should be one array of sizes: [[320, 50],[320, 250]]
 bids.bidder | Yes | Bidder name | Must be: tappx
-bids.params.host | Yes | Tappx url | testing.ssp.tappx.com/rtb/v2/
-bids.params.tappxkey | Yes | Tappx Key | pub-1234-desktop-1234
-bids.params.endpoint | Yes | Tappx Endpoint  | ABCD1234
+bids.params.host | Yes | Tappx url | YOUR HOST
+bids.params.tappxkey | Yes | Tappx Key | YOUR TAPPX KEY
+bids.params.endpoint | Yes | Tappx Endpoint  | YOUR ENDPOINT
 bids.params.bidfloor | Yes | Desired bifloor | 0.01
 bids.params.test | No | Set it to true for testing purposes |
 

@@ -8,7 +8,7 @@
   <meta charset="utf-8" />
   <title>Prebid.js video adUnit example</title>
 
-  <script async src="../../build/dev/prebid.js"></script>
+  <script async src="../Prebidjs-release/prebid.js"></script>
 
 <!-- AdPlayer.Pro code -->
 <script src="https://static.adplayer.pro/player/demo.js"></script>
@@ -58,20 +58,10 @@
               bidder: 'tappx',
               params: {
                   host: "HOST",
-                  tappxkey: "TAPPX_KEY",
-                  endpoint: "TAPPX_ENDPOINT",
+                  tappxkey: "YOUR_TAPPX_KEY",
+                  endpoint: "YOUR_ENDPOINT",
                   bidfloor: 0.005,
-                  test: true
-              }
-            },
-            {
-              bidder: 'tappx',
-              params: {
-                  host: "testing.ssp.tappx.com/rtb/v2/",
-                  tappxkey: "TAPPX_KEY",
-                  endpoint: "TAPPX_ENDPOINT",
-                  bidfloor: 0.005,
-                  test: true
+                  test: true // Optional for testing purposes
               }
             },
           ]
