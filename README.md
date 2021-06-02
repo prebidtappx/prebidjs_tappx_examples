@@ -26,3 +26,6 @@ This runs some code quality checks, starts a web server at http://localhost:9999
 
 ## Using the examples
 If you need to use the examples, you can create your files under `/integrationExamples/gpt`
+
+## Version of Prebid.js that includes the last stable version of :tappx adapter
+4.41.0
