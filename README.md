@@ -1,6 +1,6 @@
 # PREBID.JS :tappx ADAPTER
 ## Version of Prebid.js that includes the last stable version of :tappx adapter
-4.41.0
+5
 ## INTRODUCTION AND EXAMPLES
 If you need to check the operation of our adapter, you can run the test files from a web browser, before that, you need to replace your connection details in the adunits of the .html files. The parameters to replace are:
 - host: "HOST"
