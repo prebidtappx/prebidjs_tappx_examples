@@ -28,7 +28,6 @@ bids.params.mktag | No | Tappx Mktag | 1234abcd |
 bids.params.domainUrl | No | Site domain | example.com |
 bids.params.test | No | Set it to true for testing purposes | |
 
-
 ### Ad Unit extra options
 ### Bids.Params.ext object
 Paramater | Mandatory | Description | Example |
