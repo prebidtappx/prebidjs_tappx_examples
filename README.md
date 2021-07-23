@@ -1,11 +1,14 @@
 # PREBID.JS :tappx ADAPTER
 ## Version of Prebid.js that includes the last stable version of :tappx adapter
-5
+5.6.0
 ## INTRODUCTION AND EXAMPLES
 If you need to check the operation of our adapter, you can run the test files from a web browser, before that, you need to replace your connection details in the adunits of the .html files. The parameters to replace are:
 - host: "HOST"
 - tappxkey: "YOUR_TAPPX_KEY"
 - endpoint: "YOUR_ENDPOINT"
+
+### Setting your site domain
+You can add your site domain on the Ad unit definition, but also you can add the domain on the pbjs set config definition on `pbjs.setConfig({ pageUrl: "https://example.com/index.html" })`. More info on: https://docs.prebid.org/dev-docs/publisher-api-reference/setConfig.html#setConfig-Page-URL
 
 ## ADVANDED BUILD
 If you want to run Prebid.js in advanced way, your can build a development
