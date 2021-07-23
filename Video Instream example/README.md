@@ -50,7 +50,7 @@ bids.params.video.placement | No | | |
 bids.params.video.minbitrate | No | | |
 bids.params.video.maxbitrate | No | | |
 
-### Basic Example
+### Basic required params Example
 ```
 var adUnits = [
     {

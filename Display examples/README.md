@@ -36,7 +36,7 @@ Paramater | Mandatory | Description | Example |
 bids.params.ext | No | External object for extra params | |
 bids.params.ext.foo | No | Example extra param | |
 
-### Basic Example
+### Basic required params Example
 ```
 var adUnits = [
     {
