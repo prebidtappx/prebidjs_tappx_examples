@@ -8,7 +8,7 @@ If you need to check the operation of our adapter, you can run the test files fr
 - endpoint: "YOUR_ENDPOINT"
 
 ### Setting your site domain
-You can add your site domain on the Ad unit definition, but also you can add the domain on the pbjs set config definition on `pbjs.setConfig({ pageUrl: "https://example.com/index.html" })`. More info on: https://docs.prebid.org/dev-docs/publisher-api-reference/setConfig.html#setConfig-Page-URL
+You can add your site domain on the Ad unit definition, but also you can add the domain of your site on the pbjs set config definition on `pbjs.setConfig({ pageUrl: "example.com" })`. More info on: https://docs.prebid.org/dev-docs/publisher-api-reference/setConfig.html#setConfig-Page-URL
 
 ## ADVANDED BUILD
 If you want to run Prebid.js in advanced way, your can build a development
@@ -28,7 +28,7 @@ Note: If gulp is not installed on your system, you can install it by running: `n
 gulp serve
 
 # Build Optimization
-gulp serve --modules=tappxBidAdapter
+gulp build --modules="tappxBidAdapter,consentManagement,consentManagementUsp,priceFloors,admixerIdSystem,britepoolIdSystem,criteoIdSystem,deepintentDpesIdSystem,fabrickIdSystem,flocIdSystem,haloIdSystem,id5IdSystem,identityLinkIdSystem,idxIdSystem,intentIqIdSystem,liveIntentIdSystem,lotamePanoramaIdSystem,mwOpenLinkIdSystem,merkleIdSystem,netIdSystem,nextrollIdSystem,novatiqIdSystem,parrableIdSystem,pubProvidedIdSystem,quantcastIdSystem,sharedIdSystem,tapadIdSystem,unifiedIdSystem,uid2IdSystem,verizonMediaIdSystem,zeotapIdPlusIdSystem"
 ```
 
 This will create the `prebid.js` file under `./build/dev/`
