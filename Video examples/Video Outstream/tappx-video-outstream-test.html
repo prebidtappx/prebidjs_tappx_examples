@@ -1,0 +1,72 @@
+<!--
+  Tappx Outstream video example
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Prebid.js video adUnit example</title>
+
+  <script async src="prebid.js"></script>
+  <!-- <script async src="prebid5.6.0.js"></script> -->
+
+  <script>
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+
+    // Video div id
+    var videoId = 'video1';
+
+    var adUnits = [{
+        code: videoId,
+        mediaTypes: {
+            video: {
+                playerSize: [300,250],
+                context: 'outstream',
+                mimes : [ "video/mp4", "application/javascript" ]
+            }
+        },
+        bids: [{
+            bidder: 'tappx',
+            params: {
+                host: "HOST",
+                tappxkey: "YOUR_TAPPX_KEY",
+                endpoint: "YOUR_ENDPOINT",
+                bidfloor: 0.005,
+                test: true, // Optional for testing purposes
+            }
+        }]
+    }];
+
+    pbjs.que.push(function() {
+        pbjs.addAdUnits(adUnits);
+        pbjs.requestBids({
+            timeout: 1000,
+            bidsBackHandler: function(bids) {
+                var highestCpmBids = pbjs.getHighestCpmBids('video1');
+                pbjs.renderAd(document, highestCpmBids[0].adId);
+            }
+        });
+    });
+
+  </script>
+
+</head>
+<body>
+
+<h1>Tappx - Video Outstream Example Test</h1>
+<h2>Etiam faucibus aliquet euismod.</h2>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan eleifend diam, et laoreet elit aliquam at. Ut ac tortor feugiat, ornare felis et, finibus risus. Integer nunc nisi, aliquet a nunc malesuada, tempor pellentesque turpis. Donec laoreet viverra orci non convallis. Praesent elementum diam nunc, non placerat tortor pellentesque non. Aliquam a mattis ante. Nulla ac felis vel ligula porta commodo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec consectetur metus eu lacus tristique commodo. In tempor, ipsum vel pretium euismod, enim elit laoreet tellus, egestas suscipit nulla orci id nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In et velit ut justo pellentesque tempus. Duis semper est sem, iaculis luctus dolor posuere in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean facilisis arcu sed metus tincidunt, ac viverra ligula lacinia.
+</p>
+
+<div id='video1'></div>
+
+<h2>Cras rhoncus nisl orci.</h2>
+<p>
+    Etiam faucibus aliquet euismod. Nulla facilisi. Aliquam erat volutpat. Duis pellentesque purus nibh, quis hendrerit justo eleifend ac. Donec imperdiet porta neque sit amet interdum. Aenean sed tincidunt velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed at lobortis massa, non bibendum orci.
+</p>
+
+</body>
+</html>

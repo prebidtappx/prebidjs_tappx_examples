@@ -12,10 +12,6 @@ bids | Yes | Array of bids objects and its parameters. More info on `Bids object
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 mediaTypes.video | Yes | Array that defines properties of a video ad | - |
-
-#### mediaTypes.video object
-Paramater | Mandatory | Description | Example |
---- | --- | --- | --- |
 mediaTypes.video.context |Yes | Video ad type specification. | Options: instream, outstream
 mediaTypes.video.mimes | Yes | Mimes suported | Must be: [ "video/mp4" ]
 mediaTypes.video.playerSize | Yes | Is where you define the player size that will be passed | Should be one array of sizes: [[320, 50],[320, 250]]
@@ -43,6 +39,7 @@ Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 bids.params.ext | No | External object for extra params | |
 bids.params.ext.video_id | No | Video Id | |
+bids.params.ext.foo | No | Example extra param | |
 
 ### Params.video object
 Paramater | Mandatory | Description | Example |
@@ -97,5 +94,6 @@ Any of the files can be executed with the `pbjs_debug` parameter seted to true: 
 
 Player | File | Url | Description
 ---  | --- | --- | --- |
-Example with Adplayer.pro | tappx-video-appro-test.html | /integrationExamples/gpt/tappx-video-test.html?pbjs_debug=true | -
+Instream example with Adplayer.pro | tappx-video-appro-test.html | /integrationExamples/gpt/tappx-video-appro-test.html?pbjs_debug=true | -
+Outstream example | tappx-video-outstream-test.html | /integrationExamples/gpt/tappx-video-outstream-test.html?pbjs_debug=true | -
 
