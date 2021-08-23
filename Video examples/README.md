@@ -1,20 +1,32 @@
 # VIDEO INSTREAM EXAMPLE
 
-## Video Ad Unit description:
+## VIDEO AD UNIT DESCRIPTION
 
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
-code | Yes | References your video div id  | video-ad-div |
+code | Yes | References your ad slot name or div element id | video-ad-div |
+mediaTypes | Yes | Object to specify the supported formats and their respective properties. More info in `Mediatypes object` reference | - |
+bids | Yes | Array of bids objects and its parameters. More info on `Bids object` reference | - |
 
-### Mediatypes object
+### MEDIA TYPES OBJECT
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
-mediaTypes.video.context |Yes | Video ad type specification | instream
+mediaTypes.video | Yes | Array that defines properties of a video ad | - |
+
+#### mediaTypes.video object
+Paramater | Mandatory | Description | Example |
+--- | --- | --- | --- |
+mediaTypes.video.context |Yes | Video ad type specification. | Options: instream, outstream
 mediaTypes.video.mimes | Yes | Mimes suported | Must be: [ "video/mp4" ]
 mediaTypes.video.playerSize | Yes | Is where you define the player size that will be passed | Should be one array of sizes: [[320, 50],[320, 250]]
-bids.bidder | Yes | Bidder name | Must be: tappx
 
-### Params object
+### BIDS OBJECT
+Paramater | Mandatory | Description | Example |
+--- | --- | --- | --- |
+bids.bidder | Yes | Bidder name | Must be: tappx 
+bids.params | Yes | Array of parameters for the request | More info on `Params object` reference
+
+#### Bids.params object
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 bids.params.host | Yes | Tappx url | YOUR HOST
@@ -23,8 +35,7 @@ bids.params.endpoint | Yes | Tappx Endpoint  | YOUR ENDPOINT
 bids.params.bidfloor | Yes | Desired bifloor | 0.01
 bids.params.mktag | No | Tappx Mktag | 1234abcd |
 bids.params.domainUrl | No | Site domain | example.com |
-bids.params.test | No | Set it to true for testing purposes | |
-
+bids.params.test | No | Set it to true for testing purposes | 1 |
 
 ### Ad Unit extra options
 ### Params.ext object
@@ -36,7 +47,6 @@ bids.params.ext.video_id | No | Video Id | |
 ### Params.video object
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
-bids.params.video | No | Video params object | |
 bids.params.video.skippable | No | | |
 bids.params.video.minduration | No | | |
 bids.params.video.maxduration | No | | |
