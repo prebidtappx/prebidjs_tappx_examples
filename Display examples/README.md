@@ -1,21 +1,24 @@
 # DISPLAY EXAMPLE
 
-## Display Ad Unit description:
+## DISPLAY AD UNIT DESCRIPTION
 
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 code | Yes | References your display div id  | display-ad-div |
+mediaTypes | Yes | Object to specify the supported formats and their respective properties. More info in `Mediatypes object` reference | - |
+bids | Yes | Array of bids objects and its parameters. More info on `Bids object` reference | - |
 
-### Mediatypes object
+### MEDIA TYPES OBJECT
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 mediaTypes.banner |Yes |  Object with the banner definition | 
 mediaTypes.banner.sizes |Yes |  Is where you define the player size that will be passed | Should be one array of sizes: [[320, 50],[320, 250]]
 
-### Bids object
+### BIDS OBJECT
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
 bids.bidder | Yes | Bidder name | Must be: tappx
+bids.params | Yes | Array of parameters for the request | More info on `Params object` reference
 
 ### Bids.Params object
 Paramater | Mandatory | Description | Example |
@@ -72,5 +75,6 @@ Any of the files can be executed with the `pbjs_debug` parameter seted to true: 
 
 Player | File | Url | Description
 ---  | --- | --- | --- |
+Basic banner example | tappx-banner-test.html | /integrationExamples/gpt/tappx-banner-test.html?pbjs_debug=true | -
 Example with gdpr file implemented | tappx-gdpr-banner-test.html | /integrationExamples/gpt/tappx-gdpr-banner-test.html?pbjs_debug=true | -
 
