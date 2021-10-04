@@ -44,7 +44,8 @@ bids.params.ext.foo | No | Example extra param | |
 ### Params.video object
 Paramater | Mandatory | Description | Example |
 --- | --- | --- | --- |
-bids.params.video.skippable | No | | |
+bids.params.video | No | Contains video options for outstream video requests | |
+bids.params.video.skip | No | Indicates the number of seconds before the ad skip is enabled (0 disables skip)  | 0 |
 bids.params.video.minduration | No | | |
 bids.params.video.maxduration | No | | |
 bids.params.video.startdelay | No | | |
